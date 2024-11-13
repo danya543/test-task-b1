@@ -10,21 +10,13 @@ export const MainPage = () => {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchCharacters());
+      dispatch(fetchCharacters({ page: 1, limit: 10 }));
     }
   }, [dispatch, status]);
 
   return (
     <main>
       <Characters />
-      <button onClick={() => dispatch(fetchCharacters())}>
-        Load Characters
-      </button>
-      {status === 'loading' && <p>Loading...</p>}
-      {status === 'succeeded' && <p>succeeded</p>}
-      {status === 'failed' && <p>Failed to load characters.</p>}
     </main>
   );
 };
-
-/**characters.map(el => <p key={el._id}>{el._id}</p>) */

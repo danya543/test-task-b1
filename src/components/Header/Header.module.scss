@@ -1,0 +1,25 @@
+.header {
+  background: rgb(0, 79, 76);
+  height: 50px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+
+  ul {
+    li {
+      color: aliceblue;
+      width: fit-content;
+      padding: 5px;
+      list-style: none;
+      font-family: 'Lexend Deca';
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: wheat;
+      }
+    }
+  }
+}
