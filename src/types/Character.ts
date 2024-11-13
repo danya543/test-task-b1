@@ -1,9 +1,14 @@
 export interface CharacterResponse {
   info: Pagination;
+  data: Character;
+}
+
+export interface CharactersResponse {
+  info: Pagination;
   data: Character[];
 }
 
-interface Pagination {
+export interface Pagination {
   count: number;
   totalPages: number;
   nextPage: number;

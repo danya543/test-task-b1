@@ -1,0 +1,25 @@
+.container {
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 30%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 200px;
+    height: 165px;
+    object-fit: cover;
+  }
+
+  .info {
+    width: 90%;
+  }
+}
