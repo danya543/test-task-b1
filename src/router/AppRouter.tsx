@@ -1,6 +1,6 @@
 import { CharacterPage } from '@pages/CharacterPage/CharacterPage';
 import { ErrorPage } from '@pages/ErrorPage/ErrorPage';
-import { FavoritiesPage } from '@pages/FavoritiesPage/FavoritiesPage';
+import { FavoritiesPage } from '@pages/FavoritiesPage/FavoritesPage';
 import { MainLayout } from '@pages/MainLayout/MainLayout';
 import { MainPage } from '@pages/MainPage/MainPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -15,7 +15,7 @@ const routerSchema = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: '/:id',
+        path: 'characters/:id',
         element: <CharacterPage />,
       },
       {

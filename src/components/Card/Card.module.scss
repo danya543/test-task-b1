@@ -1,9 +1,13 @@
+@import '@styles/theme.scss';
+
 .container {
+  position: relative;
   padding: 5px;
   box-sizing: border-box;
   cursor: pointer;
   width: 30%;
-  height: 250px;
+  min-width: 370px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,13 +17,23 @@
     transform: scale(1.05);
   }
 
-  img {
-    width: 200px;
-    height: 165px;
+  .character_img {
+    width: 100%;
+    height: 400px;
     object-fit: cover;
+    border-radius: 7px;
   }
 
   .info {
-    width: 90%;
+    width: 100%;
+    font-family: $base-font-family;
+
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+      color: $primary-orange-color;
+    }
   }
 }

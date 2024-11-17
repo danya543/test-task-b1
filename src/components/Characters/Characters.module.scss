@@ -1,17 +1,20 @@
 @import '@styles/theme.scss';
 
 .container {
+  position: relative;
   width: 100%;
+  min-height: 60vh;
+  @include flex-col();
 
   > h3 {
-    font-size: 25px;
+    font-size: 55px;
     font-family: $base-font-family;
     margin-bottom: 20px;
     text-align: center;
   }
 
   .characters {
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: row;
     gap: 30px;

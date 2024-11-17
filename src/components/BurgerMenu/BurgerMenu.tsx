@@ -19,7 +19,8 @@ export const BurgerMenu = ({
     <div
       className={`${styles.container} ${isOpen ? styles.isOpen : ''}`}
       onClick={handleClose}
-      ref={ref}>
+      ref={ref}
+    >
       <div className={styles.menu}>
         <Nav />
       </div>

@@ -1,5 +1,4 @@
 export interface CharacterResponse {
-  info: Pagination;
   data: Character;
 }
 

@@ -1,0 +1,22 @@
+@import '@styles/theme.scss';
+
+.navigation {
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    li {
+      color: aliceblue;
+      width: fit-content;
+      padding: 5px;
+      list-style: none;
+      font-family: $base-font-family;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: wheat;
+      }
+    }
+  }
+}
