@@ -1,8 +1,8 @@
-import { CharacterResponse } from '@src/types/Character';
+import { Character, CharacterResponse } from '@src/types/Character';
 
 import { BASE_API_URL } from './constants';
 
-export async function fetchCharacter(id: string): Promise<CharacterResponse> {
+export async function fetchCharacter(id: string | number): Promise<Character> {
   const response = await fetch(`${BASE_API_URL}/character/${id}`, {
     method: 'GET',
     headers: {
@@ -13,7 +13,7 @@ export async function fetchCharacter(id: string): Promise<CharacterResponse> {
   if (response.status === 200) {
     const data = (await response.json()) as CharacterResponse;
 
-    return data;
+    return data.data;
   }
 
   throw new Error(

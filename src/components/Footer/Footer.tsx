@@ -16,7 +16,8 @@ export const Footer = () => {
         <a
           href="https://www.linkedin.com/in/daniil-hiliou-91479a284/"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           <img src={Linkedin} />
         </a>
         <a href="https://t.me/danuchka" target="_blank" rel="noreferrer">
