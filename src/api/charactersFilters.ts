@@ -2,11 +2,6 @@ import { CharacterResponse } from '@src/types/Character';
 
 import { BASE_API_URL } from './constants';
 
-export interface ResponseProps {
-  name?: string;
-  films?: string;
-}
-
 export async function fetchCharacters(id?: string): Promise<CharacterResponse> {
   const url = id
     ? `${BASE_API_URL}/character/${id}`

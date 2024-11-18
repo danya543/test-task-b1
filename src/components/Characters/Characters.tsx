@@ -22,7 +22,7 @@ export const Characters = () => {
       ) : status === 'failed' ? (
         <div>Check your internet connection</div>
       ) : (
-        <div>
+        <div className={styles.content}>
           <div className={styles.characters}>
             {characters.map(el => (
               <Card key={el._id} {...el} />

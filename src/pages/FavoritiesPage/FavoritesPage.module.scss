@@ -7,23 +7,28 @@
   position: relative;
 
   h1 {
-    margin-top: 50px;
+    margin: 50px 0 30px;
     text-align: center;
     font-size: 40px;
     font-family: $base-font-family;
+    @media (max-width:800px) {
+      text-align: left;
+      font-size: 35px;      
+    }
+    @media (max-width:600px) {
+      text-align: left;
+      font-size: 25px;      
+    }
   }
 
   .cards {
-    margin-top: 30px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+    @include flex(row, 30px, flex-start, flex-start);
+    padding: 10px;
     height: 550px;
-    overflow-x: auto;
-
-    &.empty {
-      height: 350px;
+    overflow: auto hidden;
+    @media(max-width:700px){
+      height: 400px;
     }
 
     &::-webkit-scrollbar {
@@ -31,25 +36,36 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba($black-color, 0.3);
       border-radius: $base-border-radius;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba($black-color, 0.5);
     }
 
     &::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba($black-color, 0.1);
       border-radius: $base-border-radius;
     }
   }
 
+  .empty {
+    height: 350px;
+
+    h3 {
+      font-family: $base-font-family;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
   .clear {
-    position: relative;
-    left: 90%;
-    background-color: #f44336;
-    color: white;
+    position: absolute;
+    top: 0;
+    left: 85%;
+    background-color: $error-color;
+    color: $white-color;
     border: none;
     padding: 12px 15px;
     border-radius: $circle-border-radius;
@@ -57,9 +73,16 @@
     transition:
       background-color 0.3s ease,
       transform 0.2s ease;
+    
+    @media (max-width:800px) {
+      left: 80%;
+    }
+    @media (max-width:600px) {
+      padding: 7px 10px;
+    }
 
     &:hover {
-      background-color: #d32f2f;
+      background-color: rgba($error-color, 0.5);
       transform: translateY(-2px);
     }
 
@@ -69,8 +92,8 @@
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
+      background-color: rgba($black-color, 0.8);
+      color: $white-color;
       padding: 8px 12px;
       font-size: 14px;
       border-radius: 4px;
@@ -80,6 +103,10 @@
       transition:
         opacity 0.3s ease,
         transform 0.3s ease;
+        @media (max-width:600px) {
+        content: '';
+        padding: 0;
+        }
     }
 
     &:hover::after {
@@ -89,21 +116,22 @@
     }
 
     img {
-      width: 20px;
-      height: 20px;
+      @include resize(20px);
+      @media (max-width:600px) {
+        @include resize(15px);
+      }
     }
   }
 
   .controls {
-    display: flex;
-    justify-content: space-between;
+    @include flex(row, 0, center, space-between);
     position: absolute;
     width: 90%;
     top: 45%;
 
     button {
       z-index: 1;
-      background-color: rgb(255, 255, 255);
+      background-color: $white-color;
       opacity: 0.3;
       border: none;
       border-radius: $circle-border-radius;
@@ -115,8 +143,10 @@
       }
 
       img {
-        width: 30px;
-        height: 30px;
+        @include resize(30px);
+        @media (max-width:600px) {
+          @include resize(20px);
+        }
       }
     }
   }

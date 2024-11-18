@@ -31,3 +31,13 @@ export const Images = {
 };
 
 export const loadingCharactersNum = 5;
+
+export const Socials = [
+  { href: 'mailto:dgilev75@gmail.com', icon: Mail },
+  { href: 'https://github.com/danya543', icon: Git },
+  {
+    href: 'https://www.linkedin.com/in/daniil-hiliou-91479a284/',
+    icon: Linkedin,
+  },
+  { href: 'https://t.me/danuchka', icon: Telegram },
+];

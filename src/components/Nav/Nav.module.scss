@@ -2,11 +2,13 @@
 
 .navigation {
   ul {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    @include flex(row, 20px, flex-start);
+    @media (max-width:700px) {
+      flex-direction: column;
+    }
+    
     li {
-      color: aliceblue;
+      color: $white-color;
       width: fit-content;
       padding: 5px;
       list-style: none;
@@ -15,7 +17,7 @@
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: wheat;
+        color: $primary-color-hover;
       }
     }
   }
