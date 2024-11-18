@@ -27,7 +27,7 @@ export const Confirm = ({
   };
 
   return (
-    <div>
+    <div className={styles.confirm}>
       <h2>{confirmText}</h2>
       <div className={styles.buttons}>
         <Button classname={styles.agree} onClick={handleAgree} text={'yes'} />

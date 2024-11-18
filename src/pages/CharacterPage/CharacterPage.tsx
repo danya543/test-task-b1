@@ -2,7 +2,7 @@ import { fetchCharacter } from '@api/fetchCharacter';
 import { ExpandableBlock } from '@components/ExpandableBlock/ExpandableBlock';
 import { ModalPortal } from '@components/ModalPortal/ModalPortal';
 import { OtherCharacters } from '@components/Modals/OtherCharacters';
-import { CharacterPageCard } from '@components/SkeletonLoader/CharacterPageCard';
+import { SkeletonCharacterPage } from '@components/SkeletonLoader/SkeletonCharacterPage';
 import { Character } from '@src/types/Character';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -57,6 +57,6 @@ export const CharacterPage = () => {
       </div>
     </div>
   ) : (
-    <CharacterPageCard />
+    <SkeletonCharacterPage />
   );
 };

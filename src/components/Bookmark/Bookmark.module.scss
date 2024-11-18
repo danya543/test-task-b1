@@ -2,14 +2,11 @@
 
 .bookmark {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include resize(50px);
+  @include flex(row);
   padding: 5px;
   top: 5%;
   right: 5%;
-  width: 50px;
-  height: 50px;
   background: transparent;
   border: 0;
   border-radius: $circle-border-radius;
@@ -20,7 +17,6 @@
   }
 
   img {
-    width: 80%;
-    height: 80%;
+    @include resize(80%);
   }
 }

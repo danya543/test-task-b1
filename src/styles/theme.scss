@@ -9,11 +9,17 @@
   animation: 1.5s shine linear infinite;
 }
 
-@mixin flex-col {
+@mixin flex($direction, $gap:0, $align:center, $justify:center) {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin resize($size) {
+  width: $size;
+  height: $size;
 }
 
 $base-font-family: 'Lexend Deca';
@@ -23,12 +29,14 @@ $circle-border-radius: 50%;
 $primary-orange-color: rgb(224, 164, 73);
 $secondary-orange-color: rgb(241, 121, 0);
 $primary-color-hover: rgb(251, 215, 178);
-$gray-color: rgb(57, 57, 57);
 $dark-green-color: rgb(0, 79, 76);
 
-$skeleton-bg-color: rgb(255, 255, 255);
-$skeleton-p-color: rgb(238, 238, 238);
+$white-color: rgb(255, 255, 255);
+$black-color: rgb(0, 0, 0);
 
+$selected-color: rgb(155, 170, 255);
+$success-color:rgb(76, 175, 80);
+$info-color: rgb(107, 107, 255);
 $error-color: rgb(255, 0, 0);
 
 $p_breakpoints: (

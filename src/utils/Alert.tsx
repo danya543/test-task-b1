@@ -1,11 +1,7 @@
+import { AlertProps } from '@src/types/utils';
 import { useEffect, useState } from 'react';
 
 import styles from './utils.module.scss';
-
-type AlertProps = {
-  type: 'delete' | 'success' | 'info';
-  message: string;
-};
 
 export const Alert = ({ type, message }: AlertProps) => {
   const [isVisible, setIsVisible] = useState(true);

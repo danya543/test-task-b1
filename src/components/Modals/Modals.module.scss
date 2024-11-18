@@ -1,10 +1,13 @@
 @use '@styles/theme.scss' as *;
 
 //confirm
+.confirm{
+  h2{
+    font-family: $base-font-family;
+  }
+}
 .buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
+  @include flex(row, 16px);
   margin-top: 20px;
 
   button {
@@ -20,25 +23,25 @@
     &:hover {
       transform: translateY(-2px);
       box-shadow:
-        0 6px 8px rgba(0, 0, 0, 0.15),
-        0 2px 4px rgba(0, 0, 0, 0.12);
+        0 6px 8px rgba($black-color, 0.15),
+        0 2px 4px rgba($black-color, 0.12);
     }
 
     &.agree {
-      background-color: #4caf50;
-      color: white;
+      background-color: $success-color;
+      color: $white-color;
 
       &:hover {
-        background-color: #45a049;
+        background-color: rgba($success-color, 0.5);
       }
     }
 
     &.reject {
-      background-color: #f44336;
-      color: white;
+      background-color: $error-color;
+      color: $white-color;
 
       &:hover {
-        background-color: #e53935;
+        background-color: rgba($error-color, 0.5);
       }
     }
   }
@@ -46,18 +49,21 @@
 
 //other characters
 .otherCharacters {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column);
+
+  .loader{
+    padding: 20px 0;
+    @include flex(row, 5px);
+    font-size: 20px;
+    img{
+      animation: rotation 1s infinite;
+    }
+  }
 
   .otherCharactersList {
     margin-top: 20px;
     width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+    @include flex(column, 5px);
 
     .otherCharactersItem {
       width: fit-content;
@@ -67,7 +73,7 @@
       font-size: 25px;
 
       &:hover {
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba($black-color, 0.3);
       }
     }
   }
@@ -75,24 +81,19 @@
   .pagination {
     margin-top: 10px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+    @include flex(row,10px);
 
     button {
       width: 10%;
       padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex(row);
       border: 0;
       border-radius: $circle-border-radius;
       background: transparent;
       cursor: pointer;
 
       &:hover:not(:disabled) {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba($black-color, 0.2);
       }
 
       &:disabled {
@@ -105,4 +106,9 @@
       }
     }
   }
+}
+
+@keyframes rotation{
+  from{transform: rotate(0);}
+  to{transform: rotate(360deg);}
 }
