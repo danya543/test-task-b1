@@ -32,7 +32,7 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 7px;
+      border-radius: $base-border-radius;
     }
 
     &::-webkit-scrollbar-thumb:hover {
@@ -41,7 +41,7 @@
 
     &::-webkit-scrollbar-track {
       background: rgba(0, 0, 0, 0.1);
-      border-radius: 7px;
+      border-radius: $base-border-radius;
     }
   }
 
@@ -52,7 +52,7 @@
     color: white;
     border: none;
     padding: 12px 15px;
-    border-radius: 50%;
+    border-radius: $circle-border-radius;
     cursor: pointer;
     transition:
       background-color 0.3s ease,
@@ -100,13 +100,13 @@
     position: absolute;
     width: 90%;
     top: 45%;
-    
+
     button {
       z-index: 1;
       background-color: rgb(255, 255, 255);
       opacity: 0.3;
       border: none;
-      border-radius: 50%;
+      border-radius: $circle-border-radius;
       padding: 10px 10px 5px;
       cursor: pointer;
 
@@ -114,9 +114,6 @@
         opacity: 1;
       }
 
-      &:active {
-        transform: scale(0.95);
-      }
       img {
         width: 30px;
         height: 30px;

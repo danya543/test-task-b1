@@ -8,3 +8,7 @@ export interface CharactersState {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
+
+export type FavoritesState = {
+  items: number[];
+};

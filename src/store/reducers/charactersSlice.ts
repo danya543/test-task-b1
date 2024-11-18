@@ -30,11 +30,7 @@ export const fetchCharacters = createAsyncThunk(
 const charactersSlice = createSlice({
   name: 'characters',
   initialState,
-  reducers: {
-    setCurrentPage: (state, action: PayloadAction<number>) => {
-      state.currentPage = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(fetchCharacters.pending, state => {
@@ -58,7 +54,5 @@ const charactersSlice = createSlice({
       });
   },
 });
-
-export const { setCurrentPage } = charactersSlice.actions;
 
 export default charactersSlice.reducer;

@@ -3,7 +3,7 @@ import { Images } from '@components/constants';
 import { CharactersResponse } from '@src/types/Character';
 import { Button } from '@utils/Button';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import styles from './Modals.module.scss';
 
@@ -16,6 +16,7 @@ export const OtherCharacters = ({
   film?: string;
   onClose: () => void;
 }) => {
+  const { id } = useParams();
   const { Left, Right } = Images;
   const navigate = useNavigate();
 
@@ -25,7 +26,14 @@ export const OtherCharacters = ({
 
   useEffect(() => {
     fetchInfo({ name: name, film: film, page: page }).then(data => {
-      setOtherCharacters(data);
+      const filteredData = id
+        ? data.data.filter(el => el._id !== +id)
+        : data.data;
+
+      setOtherCharacters({
+        data: filteredData,
+        info: data.info,
+      });
     });
   }, [page]);
 
@@ -41,8 +49,7 @@ export const OtherCharacters = ({
               onClick={() => {
                 onClose();
                 navigate(`/characters/${film._id}`);
-              }}
-            >
+              }}>
               {film.name}
             </div>
           ))}

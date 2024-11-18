@@ -1,3 +1,4 @@
+import { initialCharactersPerPage, initialPage } from '@api/constants';
 import { Characters } from '@components/Characters/Characters';
 import { fetchCharacters } from '@store/reducers/charactersSlice';
 import { AppDispatch, RootState } from '@store/store';
@@ -10,9 +11,11 @@ export const MainPage = () => {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchCharacters({ page: 1, limit: 10 }));
+      dispatch(
+        fetchCharacters({ page: initialPage, limit: initialCharactersPerPage }),
+      );
     }
-  }, [dispatch, status]);
+  }, [status]);
 
   return (
     <main>
