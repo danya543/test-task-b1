@@ -1,0 +1,108 @@
+@use '@styles/theme.scss' as *;
+
+//confirm
+.buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: $base-border-radius;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 6px 8px rgba(0, 0, 0, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.12);
+    }
+
+    &.agree {
+      background-color: #4caf50;
+      color: white;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    &.reject {
+      background-color: #f44336;
+      color: white;
+
+      &:hover {
+        background-color: #e53935;
+      }
+    }
+  }
+}
+
+//other characters
+.otherCharacters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .otherCharactersList {
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    .otherCharactersItem {
+      width: fit-content;
+      padding: 2px 5px;
+      border-radius: $base-border-radius;
+      cursor: pointer;
+      font-size: 25px;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      width: 10%;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: $circle-border-radius;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover:not(:disabled) {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  min-height: 55vh;
+}
+
+.info_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.character_header {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  height: 300px;
+
+  img {
+    height: 100%;
+    width: 250px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .films_container {
+      width: 80%;
+      margin-top: 10px;
+
+      .films {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        .filmItem {
+          display: inline;
+          cursor: pointer;
+          &:hover {
+            color: rgb(0, 197, 79);
+          }
+        }
+      }
+    }
+  }
+}

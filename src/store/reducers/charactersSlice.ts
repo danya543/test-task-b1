@@ -1,24 +1,29 @@
-import { fetchDisney } from '@api/fetchDisney';
+import { initialCharactersPerPage, initialPage } from '@api/constants';
+import { fetchCharacters as apiFetchCharacters } from '@api/fetchCharacters';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Character } from '@src/types/Character';
-
-export interface CharactersState {
-  characters: Character[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  error: string | null;
-}
+import { CharactersResponse } from '@src/types/Character';
+import { CharactersState } from '@store/types';
 
 const initialState: CharactersState = {
   characters: [],
+  info: null,
+  currentPage: initialPage,
+  perPage: initialCharactersPerPage,
   status: 'idle',
   error: null,
 };
 
 export const fetchCharacters = createAsyncThunk(
   'characters/fetchCharacters',
-  async () => {
-    const response = await fetchDisney({});
-    return response.data as Character[];
+  async ({
+    page = initialPage,
+    limit = initialCharactersPerPage,
+  }: {
+    page?: number;
+    limit?: number;
+  }) => {
+    const response: CharactersResponse = await apiFetchCharacters(page, limit);
+    return { ...response, currentPage: page, perPage: limit };
   },
 );
 
@@ -33,9 +38,14 @@ const charactersSlice = createSlice({
       })
       .addCase(
         fetchCharacters.fulfilled,
-        (state, action: PayloadAction<Character[]>) => {
+        (
+          state,
+          action: PayloadAction<CharactersResponse & { currentPage: number }>,
+        ) => {
           state.status = 'succeeded';
-          state.characters = action.payload;
+          state.characters = action.payload.data;
+          state.info = action.payload.info;
+          state.currentPage = action.payload.currentPage;
         },
       )
       .addCase(fetchCharacters.rejected, (state, action) => {

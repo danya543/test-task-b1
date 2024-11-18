@@ -12,9 +12,9 @@
       "@api/*": ["./src/api/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@pages/*": ["./src/pages/*"],
-      "@src/types/*": ["./src/types/*"], 
-      "@store/*": ["./src/store/*"] ,
-      "@styles/*": ["./src/styles/*"] ,
+      "@src/types/*": ["./src/types/*"],
+      "@store/*": ["./src/store/*"],
+      "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"]
     },
 

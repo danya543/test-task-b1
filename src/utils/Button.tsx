@@ -18,7 +18,8 @@ export const Button = ({
       type={type}
       className={classname}
       onClick={onClick}
-      disabled={disabled}>
+      disabled={disabled}
+    >
       {!icon && text}
       {icon && <img src={icon} />}
     </button>

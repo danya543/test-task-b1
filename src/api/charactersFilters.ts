@@ -2,17 +2,16 @@ import { CharacterResponse } from '@src/types/Character';
 
 import { BASE_API_URL } from './constants';
 
-interface ResponseProps {
+export interface ResponseProps {
   name?: string;
   films?: string;
 }
 
-export async function fetchDisney(
-  props: ResponseProps,
-): Promise<CharacterResponse> {
-  const filters = `${props.name}&${props.films}`;
-  console.log(filters);
-  const response = await fetch(`${BASE_API_URL}/character`, {
+export async function fetchCharacters(id?: string): Promise<CharacterResponse> {
+  const url = id
+    ? `${BASE_API_URL}/character/${id}`
+    : `${BASE_API_URL}/character`;
+  const response = await fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

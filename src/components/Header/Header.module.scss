@@ -1,0 +1,17 @@
+@use '@styles/theme.scss' as *;
+
+.header {
+  background: $dark-green-color;
+  height: 50px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+
+  > nav {
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+}

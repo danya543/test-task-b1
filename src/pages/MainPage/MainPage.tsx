@@ -1,3 +1,4 @@
+import { initialCharactersPerPage, initialPage } from '@api/constants';
 import { Characters } from '@components/Characters/Characters';
 import { fetchCharacters } from '@store/reducers/charactersSlice';
 import { AppDispatch, RootState } from '@store/store';
@@ -10,21 +11,15 @@ export const MainPage = () => {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchCharacters());
+      dispatch(
+        fetchCharacters({ page: initialPage, limit: initialCharactersPerPage }),
+      );
     }
-  }, [dispatch, status]);
+  }, [status]);
 
   return (
     <main>
       <Characters />
-      <button onClick={() => dispatch(fetchCharacters())}>
-        Load Characters
-      </button>
-      {status === 'loading' && <p>Loading...</p>}
-      {status === 'succeeded' && <p>succeeded</p>}
-      {status === 'failed' && <p>Failed to load characters.</p>}
     </main>
   );
 };
-
-/**characters.map(el => <p key={el._id}>{el._id}</p>) */
