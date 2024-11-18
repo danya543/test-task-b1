@@ -14,32 +14,36 @@
 
 .character_header {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px 50px;
+  flex-direction: row;
+  gap: 30px;
   height: 300px;
 
   img {
     height: 100%;
     width: 250px;
   }
-}
-
-.films_container {
-  width: 70%;
-  margin-top: 10px;
-
-  .films {
-    width: 100%;
+  .info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 4px; /* Space between items */
+    flex-direction: column;
+    gap: 30px;
 
-    .filmItem {
-      display: inline;
-      cursor: pointer;
-      &:hover {
-        color: rgb(0, 197, 79);
+    .films_container {
+      width: 80%;
+      margin-top: 10px;
+
+      .films {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        .filmItem {
+          display: inline;
+          cursor: pointer;
+          &:hover {
+            color: rgb(0, 197, 79);
+          }
+        }
       }
     }
   }

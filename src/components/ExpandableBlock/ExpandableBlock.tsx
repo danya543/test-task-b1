@@ -17,8 +17,14 @@ export const ExpandableBlock = ({
         <h4>{title}</h4>
         {items.length > 3 ? (
           <div
-            onClick={() => setIsExpanded(!isExpanded)}
-            className={`${styles.content} ${isExpanded ? styles.expanded : ''}`}>
+            onClick={() => {
+              window.scrollTo({
+                top: window.scrollY,
+              });
+              setIsExpanded(!isExpanded);
+            }}
+            className={`${styles.content} ${isExpanded ? styles.expanded : ''}`}
+          >
             {items.join(', ')}
           </div>
         ) : (

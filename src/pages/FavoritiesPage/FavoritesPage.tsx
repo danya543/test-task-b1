@@ -63,7 +63,8 @@ export const FavoritiesPage = () => {
       )}
       <div
         className={`${styles.cards} ${favorites && favorites.length > 0 ? '' : styles.empty}`}
-        ref={scrollContainerRef}>
+        ref={scrollContainerRef}
+      >
         {favorites ? (
           favorites.length > 0 ? (
             favorites.map(fav => <Card key={fav._id} {...fav} />)
