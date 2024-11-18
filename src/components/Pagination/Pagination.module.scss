@@ -6,7 +6,7 @@
   bottom: -40px;
   @include flex(row, 5px);
   max-width: 250px;
-  
+
   span {
     cursor: default;
     background: $secondary-orange-color;

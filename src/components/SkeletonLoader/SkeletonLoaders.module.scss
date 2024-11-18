@@ -12,52 +12,51 @@
 }
 
 .card {
-    width: 30%;
-    min-width: 360px;
-    @include flex(column, 20px, flex-start);
+  width: 30%;
+  min-width: 360px;
+  @include flex(column, 20px, flex-start);
 
-    > h3 {
-      width: 40%;
+  > h3 {
+    width: 40%;
+    height: 30px;
+    @include animBackground();
+    border-radius: $base-border-radius;
+  }
+  > p {
+    width: 70%;
+    height: 20px;
+    @include animBackground();
+    border-radius: $base-border-radius;
+  }
+
+  .card_img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: $base-border-radius;
+    @include animBackground();
+
+    p {
+      width: 70%;
       height: 30px;
       @include animBackground();
-      border-radius: $base-border-radius;
     }
-    > p {
+  }
+
+  .card_films {
+    h3 {
+      height: 30px;
+      width: 150px;
+      @include animBackground();
+    }
+
+    p {
+      height: 30px;
       width: 70%;
-      height: 20px;
       @include animBackground();
-      border-radius: $base-border-radius;
     }
-
-    .card_img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: $base-border-radius;
-      @include animBackground();
-
-      p {
-        width: 70%;
-        height: 30px;
-        @include animBackground();
-      }
-    }
-
-    .card_films {
-      h3 {
-        height: 30px;
-        width: 150px;
-        @include animBackground();
-      }
-
-      p {
-        height: 30px;
-        width: 70%;
-        @include animBackground();
-      }
-    }
+  }
 }
-
 
 //character page
 .page {
@@ -68,7 +67,7 @@
 
   .character_header {
     height: 300px;
-    @include flex(row,50px,flex-start);
+    @include flex(row, 50px, flex-start);
     width: 100%;
 
     .character_img {
@@ -121,12 +120,12 @@
 }
 
 //favorites page
-.favs_page{
+.favs_page {
   width: 100%;
   height: 500px;
   @include flex(row, 20px);
 
-  .card{
+  .card {
     min-width: 350px;
     width: 32%;
     height: 100%;

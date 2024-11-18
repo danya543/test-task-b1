@@ -1,8 +1,8 @@
 @use '@styles/theme.scss' as *;
 
 //confirm
-.confirm{
-  h2{
+.confirm {
+  h2 {
     font-family: $base-font-family;
   }
 }
@@ -51,11 +51,11 @@
 .otherCharacters {
   @include flex(column);
 
-  .loader{
+  .loader {
     padding: 20px 0;
     @include flex(row, 5px);
     font-size: 20px;
-    img{
+    img {
       animation: rotation 1s infinite;
     }
   }
@@ -81,7 +81,7 @@
   .pagination {
     margin-top: 10px;
     width: 100%;
-    @include flex(row,10px);
+    @include flex(row, 10px);
 
     button {
       width: 10%;
@@ -108,7 +108,11 @@
   }
 }
 
-@keyframes rotation{
-  from{transform: rotate(0);}
-  to{transform: rotate(360deg);}
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -26,7 +26,8 @@ export const Select = () => {
     <div className={styles.selectContainer} ref={ref}>
       <div
         className={`${styles.selectHeader} ${isOpen ? styles.focus : ''}`}
-        onClick={() => setIsOpen(!isOpen)}>
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {selectedValue}
         <span className={styles.arrow}>{isOpen ? '˄' : '˅'}</span>
       </div>
@@ -36,7 +37,8 @@ export const Select = () => {
             <li
               key={value}
               className={`${styles.selectItem} ${selectedValue === value ? styles.selected : ''}`}
-              onClick={() => handleSelectChange(value)}>
+              onClick={() => handleSelectChange(value)}
+            >
               {value}
             </li>
           ))}

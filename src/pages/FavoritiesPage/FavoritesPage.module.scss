@@ -11,13 +11,13 @@
     text-align: center;
     font-size: 40px;
     font-family: $base-font-family;
-    @media (max-width:800px) {
+    @media (max-width: 800px) {
       text-align: left;
-      font-size: 35px;      
+      font-size: 35px;
     }
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
       text-align: left;
-      font-size: 25px;      
+      font-size: 25px;
     }
   }
 
@@ -27,7 +27,7 @@
     padding: 10px;
     height: 550px;
     overflow: auto hidden;
-    @media(max-width:700px){
+    @media (max-width: 700px) {
       height: 400px;
     }
 
@@ -73,11 +73,11 @@
     transition:
       background-color 0.3s ease,
       transform 0.2s ease;
-    
-    @media (max-width:800px) {
+
+    @media (max-width: 800px) {
       left: 80%;
     }
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
       padding: 7px 10px;
     }
 
@@ -103,13 +103,14 @@
       transition:
         opacity 0.3s ease,
         transform 0.3s ease;
-        @media (max-width:600px) {
+      @media (max-width: 600px) {
         content: '';
         padding: 0;
-        }
+      }
     }
 
     &:hover::after {
+      transition-delay: 0.3s;
       opacity: 1;
       visibility: visible;
       transform: translateX(-50%) translateY(-5px);
@@ -117,7 +118,7 @@
 
     img {
       @include resize(20px);
-      @media (max-width:600px) {
+      @media (max-width: 600px) {
         @include resize(15px);
       }
     }
@@ -144,7 +145,7 @@
 
       img {
         @include resize(30px);
-        @media (max-width:600px) {
+        @media (max-width: 600px) {
           @include resize(20px);
         }
       }

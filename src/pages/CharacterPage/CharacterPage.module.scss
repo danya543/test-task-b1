@@ -1,11 +1,11 @@
-@use'@styles/theme.scss' as *;
+@use '@styles/theme.scss' as *;
 
 .container {
   font-family: $base-font-family;
   padding: 20px;
   min-height: 55vh;
   @include flex(column, 0, flex-start, flex-start);
-  @media (max-width:650px) {
+  @media (max-width: 650px) {
     align-items: center;
   }
 }
@@ -15,7 +15,7 @@
   width: 100%;
   @include flex(row, 20px, flex-start, flex-start);
 
-  @media (max-width:500px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     align-items: center;
   }
@@ -24,37 +24,38 @@
 .character_header {
   @include flex(row, 30px, flex-start);
   height: 300px;
-  
+
   img {
     height: 100%;
     width: 250px;
   }
-  @media (max-width:650px) {
+  @media (max-width: 650px) {
     width: 90%;
     height: auto;
     flex-direction: column;
     align-items: center;
-    img{
-      width: 100%;height: 400px;
+    img {
+      width: 100%;
+      height: 400px;
     }
   }
   .info {
     width: 80%;
     @include flex(column, 30px, flex-start);
 
-    @media (max-width:700px) {
+    @media (max-width: 700px) {
       gap: 15px;
     }
 
     .films_container {
       width: 80%;
-      @media (max-width:650px) {
+      @media (max-width: 650px) {
         width: 100%;
       }
 
       .films {
         width: 100%;
-        @include flex(row, 4px, flex-start,flex-start);
+        @include flex(row, 4px, flex-start, flex-start);
         flex-wrap: wrap;
 
         .filmItem {
