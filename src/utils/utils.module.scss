@@ -1,15 +1,16 @@
 @use '@styles/theme.scss' as *;
 
 .selectContainer {
-  position: relative;
-  align-self: flex-end;
-  margin-right: 5%;
+  position: absolute;
+  top: 65px;
+  right: 10%;
   width: 60px;
+  @media (max-width: 600px) {
+    top: 60px;
+  }
 
   .selectHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(row, 0, center, space-between);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: $base-border-radius;
@@ -34,7 +35,7 @@
     list-style: none;
     border: 1px solid #ccc;
     border-radius: 0 0 $base-border-radius $base-border-radius;
-    background-color: white;
+    background-color: $white-color;
     z-index: 10;
     transition: opacity 0.3s ease;
     box-sizing: border-box;
@@ -50,11 +51,11 @@
 
       &.selected {
         font-weight: bold;
-        background-color: #9baaff;
+        background-color: $selected-color;
       }
 
       &:hover {
-        background: rgba(155, 170, 255, 0.5);
+        background: rgba($selected-color, 0.5);
       }
 
       &:last-child {
@@ -78,9 +79,7 @@
   animation:
     fadein 0.5s,
     fadeout 0.6s 2.5s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex(column, 0, flex-start, space-between);
 
   .progress_bar {
     position: absolute;
@@ -88,7 +87,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba($black-color, 0.1);
     border-radius: 0 0 $base-border-radius $base-border-radius;
     overflow: hidden;
 
@@ -98,11 +97,11 @@
       animation: progressBar 2.7s linear forwards;
 
       &.success {
-        background: greenyellow;
+        background: $success-color;
       }
 
       &.info {
-        background: rgb(107, 107, 255);
+        background: $info-color;
       }
 
       &.delete {

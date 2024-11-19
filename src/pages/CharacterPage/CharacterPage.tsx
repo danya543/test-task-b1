@@ -1,8 +1,9 @@
 import { fetchCharacter } from '@api/fetchCharacter';
+import { Bookmark } from '@components/Bookmark/Bookmark';
 import { ExpandableBlock } from '@components/ExpandableBlock/ExpandableBlock';
 import { ModalPortal } from '@components/ModalPortal/ModalPortal';
 import { OtherCharacters } from '@components/Modals/OtherCharacters';
-import { CharacterPageCard } from '@components/SkeletonLoader/CharacterPageCard';
+import { SkeletonCharacterPage } from '@components/SkeletonLoader/SkeletonCharacterPage';
 import { Character } from '@src/types/Character';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -24,7 +25,10 @@ export const CharacterPage = () => {
   return character ? (
     <div className={styles.container}>
       <div className={styles.character_header}>
-        <img src={character.imageUrl} alt="Character" />
+        <div className={styles.character_img}>
+          <img src={character.imageUrl} alt="Character" />
+          <Bookmark id={character._id} />
+        </div>
         <div className={styles.info}>
           <h2>{character.name}</h2>
           {character.films.length > 0 && (
@@ -57,6 +61,6 @@ export const CharacterPage = () => {
       </div>
     </div>
   ) : (
-    <CharacterPageCard />
+    <SkeletonCharacterPage />
   );
 };

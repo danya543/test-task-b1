@@ -1,19 +1,19 @@
+@use '@styles/theme.scss' as *;
+
 .footer {
   padding: 30px 10px;
   margin-top: 50px;
   background: rgb(37, 0, 0);
   height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: space-between;
+  @include flex(row, 0, flex-start, space-between);
 
+  .info{
+    @include flex(column, 40px, flex-end, space-between);
+  }
   .socials {
     width: 200px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+    @include flex(row, 10px);
+
     a {
       width: 20%;
       img {
@@ -22,6 +22,7 @@
     }
   }
   p {
-    color: aliceblue;
+    color: $white-color;
+    font-family: $base-font-family;
   }
 }

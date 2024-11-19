@@ -4,21 +4,25 @@
   position: relative;
   width: 100%;
   min-height: 60vh;
-  @include flex-col();
+  @include flex(column, 30px);
 
   > h3 {
     font-size: 55px;
     font-family: $base-font-family;
     margin-bottom: 20px;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 40px;
+    }
   }
 
+  .content {
+    width: 100%;
+    @include flex(row);
+  }
   .characters {
     width: 95%;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+    @include flex(row, 30px, flex-start, center);
     flex-wrap: wrap;
-    justify-content: center;
   }
 }

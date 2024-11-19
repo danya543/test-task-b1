@@ -1,6 +1,6 @@
 import styles from './SkeletonLoaders.module.scss';
 
-export const CharacterPageCard = () => {
+export const SkeletonCharacterPage = () => {
   return (
     <div className={styles.page}>
       <div className={styles.character_header}>

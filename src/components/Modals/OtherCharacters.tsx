@@ -1,4 +1,5 @@
 import { fetchInfo } from '@api/fetchInfo';
+import Loader from '@assets/loader.png';
 import { Images } from '@components/constants';
 import { CharactersResponse } from '@src/types/Character';
 import { Button } from '@utils/Button';
@@ -49,7 +50,8 @@ export const OtherCharacters = ({
               onClick={() => {
                 onClose();
                 navigate(`/characters/${film._id}`);
-              }}>
+              }}
+            >
               {film.name}
             </div>
           ))}
@@ -73,7 +75,10 @@ export const OtherCharacters = ({
           </div>
         </div>
       ) : (
-        <div>load</div>
+        <div className={styles.loader}>
+          <img src={Loader} />
+          loading...
+        </div>
       )}
     </div>
   );

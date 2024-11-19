@@ -1,6 +1,7 @@
+import { useClickOutside } from '@hooks/useClickOutside';
 import { fetchCharacters } from '@store/reducers/charactersSlice';
 import { AppDispatch, RootState } from '@store/store';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './utils.module.scss';
@@ -12,6 +13,9 @@ export const Select = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<number>(info?.count || 10);
 
+  const ref = useRef(null);
+  useClickOutside(ref, () => setIsOpen(false));
+
   const handleSelectChange = (value: number) => {
     setSelectedValue(value);
     dispatch(fetchCharacters({ limit: value }));
@@ -19,7 +23,7 @@ export const Select = () => {
   };
 
   return (
-    <div className={styles.selectContainer}>
+    <div className={styles.selectContainer} ref={ref}>
       <div
         className={`${styles.selectHeader} ${isOpen ? styles.focus : ''}`}
         onClick={() => setIsOpen(!isOpen)}
