@@ -1,6 +1,6 @@
 import { useClickOutside } from '@hooks/useClickOutside';
 import { Button } from '@utils/Button';
-import { ReactNode, useRef } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './ModalPortal.module.scss';
@@ -15,6 +15,14 @@ export const ModalPortal = ({
   const ref = useRef(null);
 
   useClickOutside(ref, onClose);
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return createPortal(
     <div className={styles.modal_overlay}>

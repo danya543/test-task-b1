@@ -3,7 +3,7 @@
 .section {
   width: 30%;
   position: relative;
-  @media (max-width:650px) {
+  @media (max-width: 650px) {
     width: 90%;
     min-width: 200px;
   }
@@ -27,7 +27,7 @@
     background-color: rgb(249, 249, 249);
     border-radius: $base-border-radius;
     box-shadow: 0px 4px 8px rgba($black-color, 0.1);
-    @media (max-width:500px) {
+    @media (max-width: 500px) {
       max-height: 35px;
     }
 
@@ -45,11 +45,10 @@
       transition: background 0.3s ease;
     }
 
-    
     &.expanded::after {
       content: '⬆';
     }
-    
+
     &:not(.expanded)::after {
       content: '⬇';
     }

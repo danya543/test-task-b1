@@ -5,12 +5,12 @@
   top: 65px;
   right: 10%;
   width: 60px;
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     top: 60px;
   }
 
   .selectHeader {
-    @include flex(row, 0, center,space-between);
+    @include flex(row, 0, center, space-between);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: $base-border-radius;
@@ -79,7 +79,7 @@
   animation:
     fadein 0.5s,
     fadeout 0.6s 2.5s;
-  @include flex(column, 0, flex-start,space-between);
+  @include flex(column, 0, flex-start, space-between);
 
   .progress_bar {
     position: absolute;

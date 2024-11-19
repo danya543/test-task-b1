@@ -4,7 +4,7 @@
   background: $dark-green-color;
   height: 50px;
   padding: 20px 10px;
-  @include flex(row, 0,center,flex-start);
+  @include flex(row, 0, center, flex-start);
   margin-bottom: 20px;
 
   > nav {

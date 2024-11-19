@@ -9,7 +9,7 @@
   min-width: 360px;
   @include flex(column, 10px, center, flex-start);
 
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     min-width: 280px;
   }
 
@@ -22,7 +22,7 @@
     height: 400px;
     object-fit: cover;
     border-radius: $base-border-radius;
-    @media(max-width:700px){
+    @media (max-width: 700px) {
       height: 300px;
     }
   }

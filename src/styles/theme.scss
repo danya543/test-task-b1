@@ -9,7 +9,7 @@
   animation: 1.5s shine linear infinite;
 }
 
-@mixin flex($direction, $gap:0, $align:center, $justify:center) {
+@mixin flex($direction, $gap: 0, $align: center, $justify: center) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
@@ -35,12 +35,12 @@ $white-color: rgb(255, 255, 255);
 $black-color: rgb(0, 0, 0);
 
 $selected-color: rgb(155, 170, 255);
-$success-color:rgb(76, 175, 80);
+$success-color: rgb(76, 175, 80);
 $info-color: rgb(107, 107, 255);
 $error-color: rgb(255, 0, 0);
 
 $p_breakpoints: (
-    3000px: 25px,
-    1800px: 20px,
-    1000px: 15px,
+  3000px: 25px,
+  1800px: 20px,
+  1000px: 15px,
 );

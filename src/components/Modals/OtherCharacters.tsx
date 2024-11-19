@@ -50,7 +50,8 @@ export const OtherCharacters = ({
               onClick={() => {
                 onClose();
                 navigate(`/characters/${film._id}`);
-              }}>
+              }}
+            >
               {film.name}
             </div>
           ))}
