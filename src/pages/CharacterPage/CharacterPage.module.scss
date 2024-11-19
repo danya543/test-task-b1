@@ -25,6 +25,11 @@
   @include flex(row, 30px, flex-start);
   height: 300px;
 
+  .character_img {
+    height: 100%;
+    position: relative;
+  }
+
   img {
     height: 100%;
     width: 250px;
